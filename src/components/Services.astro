@@ -1,312 +1,54 @@
 ---
-// Services.astro
 const services = [
   {
-    id: 'web-apps',
-    category: 'web-mobile',
     number: '01',
-    name: 'Web Development & Apps',
-    accentColor: '#0d6573',
-    accentBg: 'bg-[#e6f4f6]',
-    accentText: 'text-[#0d6573]',
-    hoverBorder: 'hover:border-[#0d6573]/40',
-    description:
-      'Ultra-fast, responsive web applications engineered for seamless performance across varying African internet speeds and devices.',
-    examples: [
-      'High-conversion business websites & landing pages',
-      'Custom Web Applications & Portals (Client & Admin)',
-      'Progressive Web Apps (PWAs) with offline sync support',
-      'Member portals, booking engines & SaaS MVPs',
-    ],
-    techStack: ['Astro', 'React', 'Next.js', 'TypeScript', 'Tailwind', 'Node.js'],
-    deliveryTime: '2–3 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#0d6573]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>`,
+    title: 'Digital products',
+    description: 'Websites, portals and mobile experiences that are clear, fast and easy to use.',
+    items: ['Websites & landing pages', 'Web apps & internal tools', 'Mobile-first experiences'],
   },
   {
-    id: 'automation',
-    category: 'automation-data',
     number: '02',
-    name: 'Automation & Workflows',
-    accentColor: '#d97706',
-    accentBg: 'bg-[#fffbeb]',
-    accentText: 'text-[#b45309]',
-    hoverBorder: 'hover:border-[#d97706]/40',
-    description:
-      'Eliminate repetitive manual tasks, spreadsheet errors, and delayed client responses with autonomous operational workflows.',
-    examples: [
-      'Custom n8n and Zapier workflow automations',
-      'Automated customer onboarding & email sequences',
-      'Order dispatch & WhatsApp notification engines',
-      'Invoice generation, payment receipts & auto-reconciliation',
-    ],
-    techStack: ['n8n', 'Zapier', 'Make', 'Webhooks', 'WhatsApp Cloud API', 'Python'],
-    deliveryTime: '1–2 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#d97706]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>`,
+    title: 'Smarter operations',
+    description: 'Quietly remove the repetitive work that slows your team down.',
+    items: ['Workflow automation', 'Payments & API integrations', 'WhatsApp and CRM systems'],
   },
   {
-    id: 'data-intelligence',
-    category: 'commerce-data',
     number: '03',
-    name: 'Data & Intelligence',
-    accentColor: '#c2410c',
-    accentBg: 'bg-[#fff7ed]',
-    accentText: 'text-[#9a3412]',
-    hoverBorder: 'hover:border-[#c2410c]/40',
-    description:
-      'Transform scattered Excel sheets and siloed tools into executive dashboards that clarify your cashflow, unit economics, and growth.',
-    examples: [
-      'Custom interactive business KPI dashboards',
-      'Automated daily/weekly executive performance reports',
-      'Customer churn, lifetime value & retention analysis',
-      'Consolidated inventory, sales & revenue tracking',
-    ],
-    techStack: ['PostgreSQL', 'Metabase', 'Supabase', 'Python', 'Tailwind Charts', 'Google BigQuery'],
-    deliveryTime: '2–3 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#c2410c]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>`,
-  },
-  {
-    id: 'integrations',
-    category: 'automation-data',
-    number: '04',
-    name: 'Integrations & APIs',
-    accentColor: '#0d6573',
-    accentBg: 'bg-[#e6f4f6]',
-    accentText: 'text-[#0d6573]',
-    hoverBorder: 'hover:border-[#0d6573]/40',
-    description:
-      'Connect your favorite tools into one unified system. We connect your accounting, CRM, payment gateways, and shipping logistics seamlessly.',
-    examples: [
-      'Paystack, Flutterwave, M-Pesa & Stripe payment hooks',
-      'HubSpot, Zoho, Notion & CRM syncing',
-      'Accounting integrations (QuickBooks, Xero, Zoho Books)',
-      'Courier & delivery API hooks (GIGL, Sendy, DHL, Local fleets)',
-    ],
-    techStack: ['REST APIs', 'Webhooks', 'GraphQL', 'Paystack API', 'M-Pesa Daraja', 'Node.js'],
-    deliveryTime: '1–2 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#0d6573]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>`,
-  },
-  {
-    id: 'ecommerce',
-    category: 'commerce-data',
-    number: '05',
-    name: 'E-commerce Solutions',
-    accentColor: '#d97706',
-    accentBg: 'bg-[#fffbeb]',
-    accentText: 'text-[#b45309]',
-    hoverBorder: 'hover:border-[#d97706]/40',
-    description:
-      'High-converting, low-friction storefronts built for African shoppers, featuring instant local currency checkouts and mobile wallet support.',
-    examples: [
-      'Custom Shopify, WooCommerce, or headless stores',
-      'One-click WhatsApp direct checkout flows',
-      'Real-time inventory sync across retail locations',
-      'Multi-currency pricing for global export sales',
-    ],
-    techStack: ['Shopify Liquid', 'Next.js Commerce', 'Stripe', 'Paystack', 'Flutterwave', 'Sanity CMS'],
-    deliveryTime: '2–4 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#d97706]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>`,
-  },
-  {
-    id: 'mobile-apps',
-    category: 'web-mobile',
-    number: '06',
-    name: 'Mobile Development',
-    accentColor: '#9d174d',
-    accentBg: 'bg-[#fdf2f8]',
-    accentText: 'text-[#831843]',
-    hoverBorder: 'hover:border-[#9d174d]/40',
-    description:
-      'Native-feel mobile apps for Android and iOS that function smoothly on budget smartphones and low-connectivity environments.',
-    examples: [
-      'Cross-platform iOS and Android apps with single codebase',
-      'Field agent & delivery driver operational apps',
-      'Customer loyalty & in-app mobile money payments',
-      'Offline-first architecture with local SQLite sync',
-    ],
-    techStack: ['Flutter', 'React Native', 'SQLite', 'Firebase', 'Fastlane', 'App Store / Play Store'],
-    deliveryTime: '3–5 weeks typical turnaround',
-    iconSvg: `<svg class="w-6 h-6 text-[#9d174d]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>`,
+    title: 'Useful insight',
+    description: 'Turn scattered business information into decisions you can act on.',
+    items: ['Dashboards & reporting', 'Inventory and sales visibility', 'Data foundations for growth'],
   },
 ];
 ---
 
-<section id="services" class="py-24 bg-white relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    
-    <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-12 border-b border-slate-200">
-      <div class="max-w-2xl">
-        <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#e6f4f6] text-xs font-bold text-[#0d6573] uppercase tracking-wider mb-3">
-          Our Full Capabilities
-        </span>
-        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
-          Services Designed to Solve Tangible Problems
+<section id="services" class="border-t border-[#1c2521]/15 bg-[#fdfcf9] py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-8">
+      <div class="lg:col-span-4">
+        <p class="eyebrow">What we make</p>
+        <h2 class="mt-5 max-w-sm text-4xl leading-[0.95] text-[#1c2521] sm:text-5xl">
+          Less noise. More useful technology.
         </h2>
-        <p class="mt-4 text-base sm:text-lg text-slate-600">
-          Everything your business needs to operate faster, automate tedious workflows, and scale profitably—without needing an expensive in-house tech department.
+      </div>
+      <div class="lg:col-span-7 lg:col-start-6">
+        <p class="max-w-xl text-lg leading-relaxed text-[#58635d]">
+          We help growing businesses move from messy processes to simple digital systems that work in the real world.
         </p>
-      </div>
-
-      <!-- Quick Filter Buttons -->
-      <div class="flex flex-wrap items-center gap-2 self-start md:self-end">
-        <button
-          type="button"
-          class="service-filter-btn active px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-[#0d6573] text-white shadow-xs"
-          data-filter="all"
-        >
-          All Services (6)
-        </button>
-        <button
-          type="button"
-          class="service-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-slate-100 text-slate-600 hover:bg-slate-200"
-          data-filter="web-mobile"
-        >
-          Web & Mobile
-        </button>
-        <button
-          type="button"
-          class="service-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-slate-100 text-slate-600 hover:bg-slate-200"
-          data-filter="automation-data"
-        >
-          Automation & APIs
-        </button>
-        <button
-          type="button"
-          class="service-filter-btn px-4 py-2 rounded-full text-xs font-bold transition-all duration-200 bg-slate-100 text-slate-600 hover:bg-slate-200"
-          data-filter="commerce-data"
-        >
-          Commerce & Data
-        </button>
-      </div>
-    </div>
-
-    <!-- 3-Column Services Grid -->
-    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-grid">
-      {services.map((service) => (
-        <article
-          class={`service-card group relative rounded-2xl bg-white border border-slate-200/90 p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1.5 flex flex-col justify-between overflow-hidden ${service.hoverBorder}`}
-          data-category={service.category}
-        >
-          <!-- Corner Glow -->
-          <div 
-            class="pointer-events-none absolute -top-12 -right-12 w-32 h-32 rounded-full opacity-0 group-hover:opacity-10 transition-opacity duration-300 blur-2xl"
-            style={`background-color: ${service.accentColor};`}
-          ></div>
-
-          <div>
-            <!-- Top Bar: Icon & Category Number -->
-            <div class="flex items-center justify-between">
-              <div class={`w-12 h-12 rounded-xl flex items-center justify-center ${service.accentBg} transition-transform duration-300 group-hover:scale-110`}>
-                <Fragment set:html={service.iconSvg} />
+        <div class="mt-14 border-t border-[#1c2521]/20">
+          {services.map((service) => (
+            <article class="grid gap-5 border-b border-[#1c2521]/20 py-8 sm:grid-cols-[4rem_1fr_auto] sm:gap-8">
+              <span class="text-xs font-semibold tracking-[0.18em] text-[#b45c3b]">{service.number}</span>
+              <div>
+                <h3 class="font-display text-3xl text-[#1c2521]">{service.title}</h3>
+                <p class="mt-2 max-w-md text-sm leading-relaxed text-[#58635d]">{service.description}</p>
               </div>
-              <span class="text-xs font-mono font-bold text-slate-400">
-                {service.number}
-              </span>
-            </div>
-
-            <!-- Service Name -->
-            <h3 class="mt-6 text-xl font-bold text-slate-900 group-hover:text-slate-950 transition-colors">
-              {service.name}
-            </h3>
-
-            <!-- Description -->
-            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
-              {service.description}
-            </p>
-
-            <!-- Examples Bullet Points -->
-            <div class="mt-6 pt-6 border-t border-slate-100">
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Typical Deliverables:
-              </span>
-              <ul class="mt-3 space-y-2.5">
-                {service.examples.map((ex) => (
-                  <li class="flex items-start text-xs sm:text-sm text-slate-700">
-                    <svg class="w-4 h-4 mr-2 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                    </svg>
-                    <span>{ex}</span>
-                  </li>
-                ))}
+              <ul class="space-y-2 text-xs text-[#58635d] sm:min-w-44">
+                {service.items.map((item) => <li>— {item}</li>)}
               </ul>
-            </div>
-          </div>
-
-          <!-- Bottom: Tech Stack Pills & CTA Anchor -->
-          <div class="mt-8 pt-6 border-t border-slate-100">
-            <div class="flex flex-wrap gap-1.5 mb-5">
-              {service.techStack.map((tech) => (
-                <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-slate-100 text-slate-600">
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div class="flex items-center justify-between pt-2">
-              <span class="text-xs font-medium text-slate-500 flex items-center gap-1.5">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                {service.deliveryTime}
-              </span>
-              <a
-                href="#contact"
-                class="inline-flex items-center text-xs font-bold text-[#0d6573] hover:text-[#094752] group-hover:underline underline-offset-4"
-              >
-                <span>Request Scope</span>
-                <svg class="ml-1 w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-        </article>
-      ))}
-    </div>
-
-    <!-- Bottom Help Banner -->
-    <div class="mt-16 rounded-2xl bg-slate-900 text-white p-8 sm:p-10 flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
-      <div class="absolute -right-10 -bottom-10 w-64 h-64 rounded-full bg-[#0d6573]/30 blur-3xl pointer-events-none"></div>
-      <div>
-        <span class="text-xs font-mono font-bold text-[#f59e0b] uppercase tracking-wider">Not sure where to begin?</span>
-        <h4 class="text-xl sm:text-2xl font-bold mt-1 text-white">We assess your setup in a 20-minute discovery session</h4>
-        <p class="text-slate-300 text-sm mt-1 max-w-xl">
-          Tell us where your bottleneck is. We’ll outline exactly what tech you actually need (and what to skip).
-        </p>
+            </article>
+          ))}
+        </div>
       </div>
-      <a
-        href="#contact"
-        class="shrink-0 px-6 py-3.5 rounded-full bg-white text-slate-900 hover:bg-slate-100 font-bold text-sm transition-all duration-200 shadow-md"
-      >
-        Book Free Discovery Call
-      </a>
     </div>
-
   </div>
 </section>
-
-<script>
-  const filterButtons = document.querySelectorAll('.service-filter-btn');
-  const serviceCards = document.querySelectorAll('.service-card');
-
-  filterButtons.forEach((btn) => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach((b) => {
-        b.classList.remove('bg-[#0d6573]', 'text-white', 'shadow-xs');
-        b.classList.add('bg-slate-100', 'text-slate-600');
-      });
-      btn.classList.remove('bg-slate-100', 'text-slate-600');
-      btn.classList.add('bg-[#0d6573]', 'text-white', 'shadow-xs');
-
-      const filter = btn.getAttribute('data-filter');
-
-      serviceCards.forEach((card) => {
-        const cat = card.getAttribute('data-category');
-        if (filter === 'all' || cat === filter) {
-          (card as HTMLElement).style.display = 'flex';
-        } else {
-          (card as HTMLElement).style.display = 'none';
-        }
-      });
-    });
-  });
-</script>
