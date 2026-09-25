@@ -1,0 +1,357 @@
+---
+// Pricing.astro
+const retainerPlans = [
+  {
+    name: 'Starter Support',
+    tier: 'Tier 1',
+    price: '$750',
+    frequency: '/month',
+    localNote: '≈ ₦1.1M / KES 98k / GHS 11.5k',
+    description: 'Essential technical support, bug fixes, workflow adjustments, and continuous maintenance for established operations.',
+    badge: 'Operational Continuity',
+    popular: false,
+    accentBorder: 'border-slate-200',
+    ctaClass: 'bg-slate-900 hover:bg-slate-800 text-white',
+    features: [
+      'Up to 20 dedicated engineering hours/month',
+      'Bug fixes, security updates & uptime monitoring',
+      'Integration maintenance (Paystack, Zapier, Webhooks)',
+      '48-hour response SLA',
+      'Direct WhatsApp & Slack communication channel',
+    ],
+  },
+  {
+    name: 'Growth Partner',
+    tier: 'Tier 2',
+    price: '$1,850',
+    frequency: '/month',
+    localNote: '≈ ₦2.8M / KES 240k / GHS 28k',
+    description: 'Continuous feature delivery, automated operational pipelines, and technical leadership for scaling companies.',
+    badge: 'Most Popular',
+    popular: true,
+    accentBorder: 'border-[#0d6573] ring-2 ring-[#0d6573]/20 shadow-xl',
+    ctaClass: 'bg-[#0d6573] hover:bg-[#094752] text-white shadow-md shadow-[#0d6573]/20',
+    features: [
+      'Up to 50 dedicated engineering hours/month',
+      'New feature development (Web, Portal & Mobile)',
+      'Autonomous workflow automation (n8n / Zapier / WhatsApp)',
+      'Priority 24-hour response SLA',
+      'Bi-weekly strategic product roadmap planning',
+      'Comprehensive database & server performance tuning',
+    ],
+  },
+  {
+    name: 'Dedicated Tech Pod',
+    tier: 'Tier 3',
+    price: '$3,500',
+    frequency: '/month',
+    localNote: '≈ ₦5.2M / KES 455k / GHS 53k',
+    description: 'Your complete fractional technology team: Senior Architect, Full-Stack Developer, and DevOps Lead.',
+    badge: 'Scale & Enterprise',
+    popular: false,
+    accentBorder: 'border-slate-200',
+    ctaClass: 'bg-slate-900 hover:bg-slate-800 text-white',
+    features: [
+      'Up to 110 dedicated engineering hours/month',
+      'Full-stack web, mobile & cloud infrastructure',
+      'Fractional CTO strategic advisory & investor tech audits',
+      'Same-day emergency response SLA',
+      'Custom API architecture & multi-region database sync',
+      'White-glove training & documentation for internal staff',
+    ],
+  },
+];
+
+const fixedProjects = [
+  {
+    name: 'High-Impact Web Platform / PWA',
+    duration: '2–3 weeks',
+    range: '$1,200 – $2,800',
+    description: 'Custom modern website or Progressive Web App with high Lighthouse scores, mobile optimization, and CMS.',
+    highlights: ['Tailwind + Astro/Next.js', 'SEO & Analytics Setup', 'Fast CDN Hosting Config'],
+  },
+  {
+    name: 'Workflow & Payment Automation',
+    duration: '1–2 weeks',
+    range: '$650 – $1,800',
+    description: 'End-to-end automation connecting WhatsApp, Paystack/M-Pesa, CRM, and accounting without manual data entry.',
+    highlights: ['n8n / Zapier setup', 'Receipt generation', 'Zero dropped orders'],
+  },
+  {
+    name: 'Custom Portal or Business App',
+    duration: '3–5 weeks',
+    range: '$2,500 – $5,500',
+    description: 'Role-based portals, inventory dashboards, or cross-platform Flutter mobile applications for your team and customers.',
+    highlights: ['Supabase/PostgreSQL', 'Auth & permissions', 'Full source code transfer'],
+  },
+];
+---
+
+<section id="pricing" class="py-24 bg-slate-50/70 border-b border-slate-200/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200/80 text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">
+        Transparent Pricing
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Predictable Investments. Zero Hidden Fees.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        Choose between monthly engineering retainers or fixed-scope project sprints. No surprises, no billing padding.
+      </p>
+
+      <!-- Toggle Switch for Retainers vs Fixed Projects -->
+      <div class="mt-8 inline-flex p-1 rounded-full bg-slate-200/80 border border-slate-300/60 shadow-inner">
+        <button
+          type="button"
+          id="btn-pricing-retainer"
+          class="px-5 py-2 rounded-full text-xs sm:text-sm font-bold bg-white text-slate-900 shadow-sm transition-all duration-200"
+        >
+          Monthly Engineering Retainers
+        </button>
+        <button
+          type="button"
+          id="btn-pricing-fixed"
+          class="px-5 py-2 rounded-full text-xs sm:text-sm font-bold text-slate-600 hover:text-slate-900 transition-all duration-200"
+        >
+          Fixed-Scope Projects
+        </button>
+      </div>
+    </div>
+
+    <!-- Container: Retainers -->
+    <div id="container-retainers" class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {retainerPlans.map((plan) => (
+        <div class={`relative rounded-2xl bg-white p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-xl ${plan.accentBorder}`}>
+          
+          {plan.popular && (
+            <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-[#0d6573] text-white text-[11px] font-bold uppercase tracking-wider shadow-sm">
+              {plan.badge}
+            </div>
+          )}
+
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
+                {plan.tier}
+              </span>
+              {!plan.popular && (
+                <span class="text-[11px] font-semibold text-slate-500 bg-slate-100 px-2 py-0.5 rounded">
+                  {plan.badge}
+                </span>
+              )}
+            </div>
+
+            <h3 class="mt-4 text-2xl font-bold text-slate-900">
+              {plan.name}
+            </h3>
+
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed min-h-[36px]">
+              {plan.description}
+            </p>
+
+            <div class="mt-6 pt-6 border-t border-slate-100">
+              <div class="flex items-baseline">
+                <span class="text-4xl font-extrabold text-slate-900 tracking-tight">{plan.price}</span>
+                <span class="ml-1 text-sm font-semibold text-slate-500">{plan.frequency}</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">{plan.localNote}</p>
+            </div>
+
+            <ul class="mt-6 space-y-3 pt-6 border-t border-slate-100">
+              {plan.features.map((feat) => (
+                <li class="flex items-start text-xs sm:text-sm text-slate-700">
+                  <svg class="w-4 h-4 mr-2.5 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{feat}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="mt-8 pt-6">
+            <a
+              href="#contact"
+              class={`w-full block text-center py-3.5 px-6 rounded-xl font-bold text-sm transition-all duration-200 active:scale-95 ${plan.ctaClass}`}
+            >
+              Select {plan.name}
+            </a>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Container: Fixed-Scope Projects -->
+    <div id="container-fixed" class="mt-14 hidden grid-cols-1 md:grid-cols-3 gap-8">
+      {fixedProjects.map((proj) => (
+        <div class="rounded-2xl bg-white p-8 border border-slate-200 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#e6f4f6] text-[#0d6573] text-xs font-bold">
+              <span>{proj.duration} Delivery</span>
+            </div>
+            <h3 class="mt-4 text-xl font-bold text-slate-900">
+              {proj.name}
+            </h3>
+            <p class="mt-2 text-xs text-slate-500 leading-relaxed">
+              {proj.description}
+            </p>
+            <div class="mt-6 pt-6 border-t border-slate-100">
+              <span class="text-xs text-slate-400 uppercase font-semibold">Typical Investment:</span>
+              <div class="text-2xl font-extrabold text-slate-900 mt-1">{proj.range}</div>
+            </div>
+            <div class="mt-6 pt-6 border-t border-slate-100">
+              <span class="text-xs font-bold uppercase text-slate-400 block mb-2">Key Highlights:</span>
+              <ul class="space-y-2">
+                {proj.highlights.map((h) => (
+                  <li class="flex items-center text-xs text-slate-700">
+                    <svg class="w-3.5 h-3.5 mr-2 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 pt-6">
+            <a
+              href="#contact"
+              class="w-full block text-center py-3.5 px-6 rounded-xl font-bold text-sm bg-slate-900 hover:bg-slate-800 text-white transition-all"
+            >
+              Get Fixed-Scope Quote
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Interactive Project Scope Estimator Widget -->
+    <div class="mt-16 rounded-2xl bg-white border border-slate-200/90 p-8 sm:p-10 shadow-lg">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-slate-100">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-[#0d6573]">Interactive Estimator</span>
+          <h3 class="text-xl sm:text-2xl font-bold text-slate-900 mt-1">Estimate Your Project Scope</h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">Select your primary needs to see estimated timelines and deliverables.</p>
+        </div>
+        <div class="p-3 bg-[#e6f4f6] rounded-xl text-xs font-semibold text-[#0d6573] flex items-center gap-2">
+          <span>💡 No obligation • Instant transparent guidance</span>
+        </div>
+      </div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 mb-2">What do you want to build?</label>
+          <select id="estimator-service" class="w-full rounded-xl border border-slate-200 bg-white p-3 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0d6573]">
+            <option value="web">Web Application / High-Speed Site</option>
+            <option value="auto">Process Automation & WhatsApp Sync</option>
+            <option value="data">Custom Dashboard & Analytics</option>
+            <option value="ecom">E-commerce Store & Payment Rails</option>
+            <option value="mobile">Mobile Application (iOS & Android)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase text-slate-500 mb-2">Desired Timeline</label>
+          <select id="estimator-timeline" class="w-full rounded-xl border border-slate-200 bg-white p-3 text-sm font-medium text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#0d6573]">
+            <option value="rapid">Rapid Sprint (2–3 Weeks)</option>
+            <option value="standard">Standard Milestone (3–5 Weeks)</option>
+            <option value="retainer">Continuous Monthly Partnership</option>
+          </select>
+        </div>
+
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-semibold text-slate-500">Estimated Project Window:</span>
+            <div id="estimator-output" class="text-lg font-bold text-[#0d6573] mt-0.5">2–3 Weeks • Fixed Quote</div>
+          </div>
+          <a
+            href="#contact"
+            id="estimator-cta-btn"
+            class="mt-3 text-center px-4 py-2 rounded-lg bg-[#0d6573] hover:bg-[#094752] text-white text-xs font-bold transition-all"
+          >
+            Lock In This Scope →
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // Tab toggle
+  const btnRetainer = document.getElementById('btn-pricing-retainer');
+  const btnFixed = document.getElementById('btn-pricing-fixed');
+  const containerRetainers = document.getElementById('container-retainers');
+  const containerFixed = document.getElementById('container-fixed');
+
+  if (btnRetainer && btnFixed && containerRetainers && containerFixed) {
+    btnRetainer.addEventListener('click', () => {
+      btnRetainer.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+      btnRetainer.classList.remove('text-slate-600');
+      btnFixed.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
+      btnFixed.classList.add('text-slate-600');
+
+      containerRetainers.classList.remove('hidden');
+      containerRetainers.classList.add('grid');
+      containerFixed.classList.add('hidden');
+      containerFixed.classList.remove('grid');
+    });
+
+    btnFixed.addEventListener('click', () => {
+      btnFixed.classList.add('bg-white', 'text-slate-900', 'shadow-sm');
+      btnFixed.classList.remove('text-slate-600');
+      btnRetainer.classList.remove('bg-white', 'text-slate-900', 'shadow-sm');
+      btnRetainer.classList.add('text-slate-600');
+
+      containerFixed.classList.remove('hidden');
+      containerFixed.classList.add('grid');
+      containerRetainers.classList.add('hidden');
+      containerRetainers.classList.remove('grid');
+    });
+  }
+
+  // Estimator calculation
+  const selService = document.getElementById('estimator-service') as HTMLSelectElement | null;
+  const selTimeline = document.getElementById('estimator-timeline') as HTMLSelectElement | null;
+  const output = document.getElementById('estimator-output');
+
+  function updateEstimate() {
+    if (!selService || !selTimeline || !output) return;
+    const serv = selService.value;
+    const time = selTimeline.value;
+
+    let timeText = '2–3 Weeks';
+    let budgetText = '$1,200 – $2,500';
+
+    if (serv === 'auto') {
+      timeText = time === 'rapid' ? '1–2 Weeks' : '2 Weeks';
+      budgetText = '$650 – $1,800';
+    } else if (serv === 'data') {
+      timeText = time === 'rapid' ? '2 Weeks' : '3–4 Weeks';
+      budgetText = '$1,500 – $3,000';
+    } else if (serv === 'ecom') {
+      timeText = time === 'rapid' ? '2–3 Weeks' : '3–4 Weeks';
+      budgetText = '$1,800 – $3,800';
+    } else if (serv === 'mobile') {
+      timeText = time === 'rapid' ? '3–4 Weeks' : '4–6 Weeks';
+      budgetText = '$3,000 – $6,500';
+    }
+
+    if (time === 'retainer') {
+      output.textContent = `Continuous Pod • from $750/mo`;
+    } else {
+      output.textContent = `${timeText} • ${budgetText}`;
+    }
+  }
+
+  if (selService && selTimeline) {
+    selService.addEventListener('change', updateEstimate);
+    selTimeline.addEventListener('change', updateEstimate);
+  }
+</script>

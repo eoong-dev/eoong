@@ -1,0 +1,229 @@
+---
+// CTA.astro
+---
+
+<section id="contact" class="py-24 bg-white relative overflow-hidden">
+  
+  <!-- Subtle Ambient Glows -->
+  <div class="pointer-events-none absolute inset-0 -z-10">
+    <div class="absolute bottom-0 left-1/4 h-96 w-96 rounded-full bg-[#0d6573]/10 blur-[130px]"></div>
+    <div class="absolute top-1/3 right-1/4 h-96 w-96 rounded-full bg-[#d97706]/10 blur-[130px]"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl bg-slate-950 text-white p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-2xl border border-slate-800">
+      
+      <!-- Top Subtle Gradient Glow Strip -->
+      <div class="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#0d6573] via-[#d97706] to-[#9d174d]"></div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left: Copy & Contact Methods -->
+        <div class="lg:col-span-5 flex flex-col justify-between h-full">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-semibold text-emerald-400 mb-6">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Available for Q2/Q3 Project Sprints</span>
+            </div>
+
+            <!-- Headline -->
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
+              Ready to Solve Your Tech Problem?
+            </h2>
+
+            <!-- Subtext -->
+            <p class="mt-4 text-lg text-slate-300 font-medium">
+              Let's build something great together.
+            </p>
+
+            <p class="mt-4 text-sm text-slate-400 leading-relaxed">
+              Tell us about your business bottleneck or upcoming product vision. 
+              We will respond with an honest assessment, clear architecture plan, and fixed-fee estimate within 4 business hours.
+            </p>
+
+            <!-- Direct Contact Options -->
+            <div class="mt-8 space-y-4">
+              
+              <!-- Option 1: WhatsApp -->
+              <a
+                href="https://wa.me/2348000000000?text=Hi%20EOONG%20team,%20I'd%20like%20to%20discuss%20a%20project%20for%20my%20business."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 hover:bg-slate-900 transition-all group"
+              >
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Prefer instant messaging?</div>
+                  <div class="text-sm font-bold text-white group-hover:text-emerald-300 transition-colors">Chat on WhatsApp Directly →</div>
+                </div>
+              </a>
+
+              <!-- Option 2: Discovery Call -->
+              <a
+                href="mailto:hello@eoong.tech?subject=Discovery%20Call%20Request%20-%20EOONG"
+                class="flex items-center gap-3.5 p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-[#0d6573]/50 hover:bg-slate-900 transition-all group"
+              >
+                <div class="w-10 h-10 rounded-lg bg-[#0d6573]/20 text-[#158597] flex items-center justify-center shrink-0">
+                  <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs text-slate-400">Prefer a face-to-face video chat?</div>
+                  <div class="text-sm font-bold text-white group-hover:text-cyan-300 transition-colors">Schedule a 20-Minute Video Call →</div>
+                </div>
+              </a>
+
+              <!-- Direct Email -->
+              <div class="pt-2 flex items-center gap-2 text-xs text-slate-400">
+                <span>Or email our leads at:</span>
+                <a href="mailto:hello@eoong.tech" class="text-white font-mono hover:text-[#0d6573] underline">
+                  hello@eoong.tech
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Bottom Assurance -->
+          <div class="mt-8 pt-6 border-t border-slate-900 flex items-center gap-2 text-xs text-slate-400">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <span>Strict privacy. Mutual NDA provided upon request.</span>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Project Inquiry Form -->
+        <div class="lg:col-span-7 bg-slate-900/90 rounded-2xl p-6 sm:p-8 border border-slate-800 shadow-xl">
+          
+          <form id="project-inquiry-form" class="space-y-5" onsubmit="event.preventDefault();">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-semibold text-slate-300 mb-1.5">Your Full Name *</label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  required
+                  placeholder="e.g. Tayo Johnson"
+                  class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#0d6573] focus:ring-1 focus:ring-[#0d6573]"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="block text-xs font-semibold text-slate-300 mb-1.5">Business Email *</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  required
+                  placeholder="tayo@company.com"
+                  class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#0d6573] focus:ring-1 focus:ring-[#0d6573]"
+                />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-phone" class="block text-xs font-semibold text-slate-300 mb-1.5">WhatsApp / Phone Number</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  placeholder="+234 / +254 / +233..."
+                  class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#0d6573] focus:ring-1 focus:ring-[#0d6573]"
+                />
+              </div>
+              <div>
+                <label for="contact-service" class="block text-xs font-semibold text-slate-300 mb-1.5">Primary Service Needed *</label>
+                <select
+                  id="contact-service"
+                  required
+                  class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-white focus:outline-none focus:border-[#0d6573] focus:ring-1 focus:ring-[#0d6573]"
+                >
+                  <option value="web-apps">Web Development & Apps</option>
+                  <option value="automation">Automation & Workflows (n8n / Zapier)</option>
+                  <option value="data">Data & Dashboards</option>
+                  <option value="integrations">Integrations & Payment Rails</option>
+                  <option value="ecommerce">E-Commerce Store Setup</option>
+                  <option value="mobile">Mobile App Development</option>
+                  <option value="retainer">Monthly Engineering Retainer</option>
+                  <option value="general">Other / Free Discovery Session</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Budget Range Pill Selector -->
+            <div>
+              <label class="block text-xs font-semibold text-slate-300 mb-2">Estimated Budget Range (USD)</label>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                {['<$1k', '$1k - $3k', '$3k - $7k', 'Monthly Retainer'].map((budget, i) => (
+                  <label class="flex items-center justify-center p-2.5 rounded-lg border border-slate-800 bg-slate-950 text-xs font-medium text-slate-300 cursor-pointer hover:border-slate-700 transition-colors has-[:checked]:border-[#0d6573] has-[:checked]:bg-[#0d6573]/20 has-[:checked]:text-white">
+                    <input type="radio" name="budget-choice" value={budget} class="sr-only" checked={i === 1} />
+                    <span>{budget}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-details" class="block text-xs font-semibold text-slate-300 mb-1.5">Project Overview / Current Challenge *</label>
+              <textarea
+                id="contact-details"
+                rows="3"
+                required
+                placeholder="Briefly describe what your business does and the technical problem or feature you want to solve..."
+                class="w-full rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-[#0d6573] focus:ring-1 focus:ring-[#0d6573]"
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              id="contact-submit-btn"
+              class="w-full py-4 px-8 rounded-xl bg-[#0d6573] hover:bg-[#094752] text-white font-bold text-base transition-all duration-300 shadow-lg shadow-[#0d6573]/30 hover:shadow-[#0d6573]/50 active:scale-[0.99] flex items-center justify-center gap-2"
+            >
+              <span>Submit Project Brief</span>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+
+            <!-- Success State Message (initially hidden) -->
+            <div id="contact-success" class="hidden p-4 rounded-xl bg-emerald-950/80 border border-emerald-600/50 text-emerald-200 text-xs leading-relaxed text-center">
+              <span class="font-bold text-sm block mb-1">🎉 Brief Received Successfully!</span>
+              Our senior engineering pod has received your scope. We will review your requirements and follow up via email/WhatsApp within 4 business hours.
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('project-inquiry-form');
+  const successBox = document.getElementById('contact-success');
+  const submitBtn = document.getElementById('contact-submit-btn');
+
+  if (form && successBox && submitBtn) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      submitBtn.setAttribute('disabled', 'true');
+      submitBtn.innerHTML = `<span>Transmitting Scope...</span>`;
+
+      setTimeout(() => {
+        submitBtn.classList.add('hidden');
+        successBox.classList.remove('hidden');
+        form.querySelectorAll('input, select, textarea').forEach((el) => {
+          (el as HTMLInputElement).setAttribute('disabled', 'true');
+        });
+      }, 700);
+    });
+  }
+</script>

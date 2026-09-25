@@ -1,0 +1,187 @@
+---
+// HowItWorks.astro
+const steps = [
+  {
+    step: '01',
+    name: 'Discover',
+    badge: 'Day 1–3',
+    colorHex: '#0d6573',
+    colorClasses: {
+      stepBg: 'bg-[#0d6573]',
+      badgeBg: 'bg-[#e6f4f6]',
+      badgeText: 'text-[#0d6573]',
+      border: 'border-[#0d6573]/30',
+      lightBg: 'bg-[#0d6573]/5',
+    },
+    tagline: 'We understand your problem',
+    summary:
+      'We run a focused 30-minute discovery session to dig into your manual bottlenecks, customer journey, existing software, and primary revenue goals.',
+    keyOutputs: [
+      'Operational pain-point audit',
+      'Realistic scope & fixed-quote roadmap',
+      'Tech stack & payment rail recommendations',
+    ],
+  },
+  {
+    step: '02',
+    name: 'Plan',
+    badge: 'Day 4–7',
+    colorHex: '#d97706',
+    colorClasses: {
+      stepBg: 'bg-[#d97706]',
+      badgeBg: 'bg-[#fffbeb]',
+      badgeText: 'text-[#b45309]',
+      border: 'border-[#d97706]/30',
+      lightBg: 'bg-[#d97706]/5',
+    },
+    tagline: 'We design the solution',
+    summary:
+      'Before writing code, we map out clean system flows, database schemas, and interactive interface wireframes so you see exactly how the product will function.',
+    keyOutputs: [
+      'Interactive prototype wireframes',
+      'Database & API integration schematics',
+      'Defined milestone delivery calendar',
+    ],
+  },
+  {
+    step: '03',
+    name: 'Build',
+    badge: 'Week 2–3',
+    colorHex: '#c2410c',
+    colorClasses: {
+      stepBg: 'bg-[#c2410c]',
+      badgeBg: 'bg-[#fff7ed]',
+      badgeText: 'text-[#9a3412]',
+      border: 'border-[#c2410c]/30',
+      lightBg: 'bg-[#c2410c]/5',
+    },
+    tagline: 'We deliver quickly',
+    summary:
+      'Our senior pod codes your solution in rapid, high-momentum sprints. You get access to a private staging URL with live Friday demos to test real features as they are built.',
+    keyOutputs: [
+      'Production-tested, responsive codebase',
+      'Live weekly staging demos for your team',
+      'Payment gateways & webhook testing in sandbox',
+    ],
+  },
+  {
+    step: '04',
+    name: 'Support',
+    badge: 'Ongoing',
+    colorHex: '#9d174d',
+    colorClasses: {
+      stepBg: 'bg-[#9d174d]',
+      badgeBg: 'bg-[#fdf2f8]',
+      badgeText: 'text-[#831843]',
+      border: 'border-[#9d174d]/30',
+      lightBg: 'bg-[#9d174d]/5',
+    },
+    tagline: 'We maintain & optimize',
+    summary:
+      'We handle production deployment, transfer full repository ownership, train your staff with screen recordings, and provide ongoing monitoring so your business runs smoothly.',
+    keyOutputs: [
+      'Zero-downtime production deployment',
+      'Loom video staff training library',
+      'Full credentials, code & asset transfer',
+    ],
+  },
+];
+---
+
+<section id="how-it-works" class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-100 text-xs font-bold text-slate-700 uppercase tracking-wider mb-4">
+        Our Battle-Tested Process
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        From Idea to Live Deployment in 4 Clear Steps
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        No mysterious black boxes or endless delays. Here is our exact step-by-step roadmap to getting your technology built and generating results.
+      </p>
+    </div>
+
+    <!-- Timeline Grid -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
+      
+      <!-- Desktop Connecting Line with Watercolor Gradient -->
+      <div class="hidden lg:block absolute top-14 left-[12%] right-[12%] h-0.5 bg-gradient-to-r from-[#0d6573] via-[#d97706] to-[#9d174d] -z-0 opacity-40"></div>
+
+      {steps.map((item) => (
+        <div class="relative z-10 flex flex-col justify-between rounded-2xl bg-white border border-slate-200 p-6 sm:p-7 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          
+          <div>
+            <!-- Step Number Node & Badge -->
+            <div class="flex items-center justify-between mb-6">
+              <div class={`w-12 h-12 rounded-xl flex items-center justify-center text-white font-mono font-extrabold text-lg shadow-sm ${item.colorClasses.stepBg}`}>
+                {item.step}
+              </div>
+              <span class={`text-xs font-bold px-2.5 py-1 rounded-full ${item.colorClasses.badgeBg} ${item.colorClasses.badgeText}`}>
+                {item.badge}
+              </span>
+            </div>
+
+            <!-- Step Title -->
+            <h3 class="text-2xl font-bold text-slate-900">
+              {item.name}
+            </h3>
+            <p class="text-xs font-semibold text-slate-500 mt-1 uppercase tracking-wider">
+              {item.tagline}
+            </p>
+
+            <!-- Summary -->
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              {item.summary}
+            </p>
+          </div>
+
+          <!-- Key Outputs List -->
+          <div class="mt-6 pt-5 border-t border-slate-100">
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 block mb-2.5">
+              Deliverables:
+            </span>
+            <ul class="space-y-2">
+              {item.keyOutputs.map((output) => (
+                <li class="flex items-start text-xs text-slate-700">
+                  <svg class="w-3.5 h-3.5 mr-1.5 text-emerald-500 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{output}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Process Assurance Strip -->
+    <div class="mt-14 p-6 rounded-2xl bg-slate-50 border border-slate-200/90 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-[#0d6573]/10 flex items-center justify-center shrink-0">
+          <svg class="w-5 h-5 text-[#0d6573]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div>
+          <h4 class="font-bold text-sm text-slate-900">Weekly Progress Guarantee</h4>
+          <p class="text-xs text-slate-500">Every project milestone includes recorded Loom video updates, accessible code staging, and transparent hours.</p>
+        </div>
+      </div>
+      <a
+        href="#contact"
+        class="shrink-0 text-xs font-bold text-[#0d6573] hover:text-[#094752] flex items-center gap-1 group"
+      >
+        <span>Schedule Discovery Call</span>
+        <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>

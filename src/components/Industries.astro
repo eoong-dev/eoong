@@ -1,0 +1,137 @@
+---
+// Industries.astro
+const industries = [
+  {
+    icon: '🛍️',
+    title: 'E-commerce & D2C Sellers',
+    accentColor: '#0d6573',
+    painPoint: 'Cart abandonment & manual stock reconciliation across channels',
+    solution:
+      'We build low-friction checkout flows with Paystack & M-Pesa, automated WhatsApp order updates, and inventory sync across retail counters and websites.',
+    badge: 'High Conversion',
+  },
+  {
+    icon: '💼',
+    title: 'Service & Consulting Firms',
+    accentColor: '#d97706',
+    painPoint: 'Unpaid invoices and disjointed client onboarding spreadsheets',
+    solution:
+      'Automated intake forms, proposal generators, automated recurring invoice follow-ups, and self-service customer management portals.',
+    badge: 'Operations & Cashflow',
+  },
+  {
+    icon: '🍽️',
+    title: 'Local Retail & Hospitality',
+    accentColor: '#c2410c',
+    painPoint: 'Slow table ordering, out-of-stock discrepancies, and reliance on third-party aggregators',
+    solution:
+      'Direct WhatsApp ordering bots, fast QR digital menus, multi-branch stock tracking, and zero-commission direct customer relationships.',
+    badge: 'Direct-to-Customer',
+  },
+  {
+    icon: '🚀',
+    title: 'Freelancers & Solopreneurs',
+    accentColor: '#9d174d',
+    painPoint: 'Spending half the working week on administrative chores instead of client work',
+    solution:
+      'Automated scheduling, international payment collection via Stripe/Paystack, automated contracts, and slick portfolio showcases.',
+    badge: 'Time Saver',
+  },
+  {
+    icon: '🤝',
+    title: 'Non-Profits & Social Ventures',
+    accentColor: '#0d6573',
+    painPoint: 'Fragmented donor data and difficulty demonstrating measurable impact',
+    solution:
+      'Global multi-currency donation portals, transparent real-time impact dashboards, and field worker data collection tools.',
+    badge: 'Impact Reporting',
+  },
+  {
+    icon: '🚚',
+    title: 'Logistics & Fleet Operators',
+    accentColor: '#d97706',
+    painPoint: 'Endless customer "where is my parcel?" calls and missing proof-of-delivery',
+    solution:
+      'Real-time parcel tracking links, driver mobile portals with photo signatures, and automated SMS arrival alerts.',
+    badge: 'Fleet Efficiency',
+  },
+];
+---
+
+<section id="industries" class="py-24 bg-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#fffbeb] text-xs font-bold text-[#b45309] uppercase tracking-wider mb-4">
+        Industry Solutions
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Tailored for the African Business Landscape
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        Every sector has distinct bottlenecks. We configure tools specifically engineered to handle local commercial habits, payment behaviors, and infrastructure.
+      </p>
+    </div>
+
+    <!-- Industries Grid -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {industries.map((ind) => (
+        <div class="group relative rounded-2xl bg-white border border-slate-200 p-7 shadow-xs hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-2xl p-2.5 rounded-xl bg-slate-50 border border-slate-100 group-hover:scale-110 transition-transform">
+                {ind.icon}
+              </span>
+              <span class="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                {ind.badge}
+              </span>
+            </div>
+
+            <h3 class="mt-5 text-xl font-bold text-slate-900">
+              {ind.title}
+            </h3>
+
+            <div class="mt-4 p-3 rounded-lg bg-rose-50/70 border border-rose-100 text-xs text-rose-800">
+              <span class="font-bold">The Problem:</span> {ind.painPoint}
+            </div>
+
+            <p class="mt-4 text-sm text-slate-600 leading-relaxed">
+              <span class="font-semibold text-slate-900">How we solve it:</span> {ind.solution}
+            </p>
+          </div>
+
+          <div class="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs font-semibold text-slate-500">Customized roadmap</span>
+            <a
+              href="#contact"
+              class="text-xs font-bold text-[#0d6573] hover:text-[#094752] flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+            >
+              <span>Explore Scope</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom '...and many more' Callout -->
+    <div class="mt-12 text-center p-8 rounded-2xl bg-gradient-to-r from-[#e6f4f6] via-[#fffbeb] to-[#fdf2f8] border border-slate-200/80">
+      <div class="max-w-2xl mx-auto">
+        <h3 class="text-lg font-bold text-slate-900">
+          Operate in a unique niche or specialized market?
+        </h3>
+        <p class="text-sm text-slate-600 mt-2">
+          From agritech cooperatives and healthcare clinics to creative studios and education portals—we architect custom software matched to your exact business rules.
+        </p>
+        <a
+          href="#contact"
+          class="mt-4 inline-flex items-center text-xs sm:text-sm font-bold text-[#0d6573] hover:text-[#094752] underline underline-offset-4"
+        >
+          Discuss Your Unique Workflow Needs →
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>

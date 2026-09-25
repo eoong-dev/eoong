@@ -1,0 +1,203 @@
+---
+// Testimonials.astro
+const testimonials = [
+  {
+    quote:
+      "Before EOONG, our physical retail store stock and online website constantly desynced, resulting in embarrassing stockouts and refunds every weekend. EOONG automated our entire Shopify, Paystack, and inventory pipeline in 14 days. We saved 14+ hours of manual reconciliation every single week.",
+    name: 'Kemi Adebayo',
+    role: 'Founder & Managing Director',
+    company: 'Kova Retail & Lifestyle',
+    location: 'Lagos, Nigeria',
+    metric: 'Zero inventory desyncs',
+    submetric: '14-day delivery sprint',
+    accentColor: '#0d6573',
+    accentBg: 'bg-[#e6f4f6]',
+    accentText: 'text-[#0d6573]',
+    initials: 'KA',
+  },
+  {
+    quote:
+      "We needed an SMS parcel tracking portal and M-Pesa automated billing for 45+ dispatch riders across Nairobi. Other agencies quoted us 5 months and astronomical fees. EOONG deployed the entire responsive portal in 18 days. It works reliably even when drivers are in patchy connectivity zones.",
+    name: 'David Ochieng',
+    role: 'Head of Operations',
+    company: 'Rift Express Logistics',
+    location: 'Nairobi, Kenya',
+    metric: '99.8% tracking uptime',
+    submetric: '18-day launch to field',
+    accentColor: '#d97706',
+    accentBg: 'bg-[#fffbeb]',
+    accentText: 'text-[#b45309]',
+    initials: 'DO',
+  },
+  {
+    quote:
+      "Our artisan cooperative exports handcrafted textiles to buyers in North America, Europe, and West Africa. EOONG rebuilt our commerce architecture with multi-currency checkouts, dynamic DHL freight calculation, and WhatsApp support. Our international conversions increased by 340%.",
+    name: 'Ama Mansah',
+    role: 'Co-Founder & Executive Director',
+    company: 'Ashanti Heritage Collective',
+    location: 'Accra, Ghana',
+    metric: '+340% overseas conversions',
+    submetric: 'Seamless multi-currency',
+    accentColor: '#9d174d',
+    accentBg: 'bg-[#fdf2f8]',
+    accentText: 'text-[#831843]',
+    initials: 'AM',
+  },
+];
+
+const faqs = [
+  {
+    question: 'How fast can our project actually launch?',
+    answer:
+      'Most of our client projects launch within 2 to 4 weeks. Because we operate as a dedicated 3–5 person senior engineering pod without corporate bureaucracy, we begin coding immediately after discovery and provide live demo links every Friday.',
+  },
+  {
+    question: 'Do we own 100% of the code and intellectual property?',
+    answer:
+      'Yes, absolutely. From day one, all Git repositories, infrastructure accounts, API keys, database credentials, and design assets belong entirely to your company. We do not use proprietary agency locks.',
+  },
+  {
+    question: 'Can you integrate local African payment gateways like Paystack, Flutterwave, and M-Pesa?',
+    answer:
+      'Yes, this is our core specialty. We build resilient webhook handlers, automatic transaction reconciliations, mobile money STK push flows, and multi-currency conversion routines for African businesses.',
+  },
+  {
+    question: 'What happens after the project goes live?',
+    answer:
+      'We do not disappear after launch. Every project includes a 30-day post-launch warranty, detailed Loom training videos for your staff, and the option to transition seamlessly into our affordable monthly support retainer.',
+  },
+  {
+    question: 'How do payments and milestones work?',
+    answer:
+      'For fixed-scope projects, we typically work on a 50% deposit and 50% upon successful final deployment. For monthly retainers, we bill at the beginning of each cycle with no long-term lock-in contracts—you can cancel or pause anytime.',
+  },
+];
+---
+
+<section id="testimonials" class="py-24 bg-slate-50/70 border-b border-slate-200/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200/80 text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">
+        Authentic Client Stories
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Real Small Businesses. Measurable Outcomes.
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        Here is what founders and operators across Nigeria, Kenya, and Ghana say about building with EOONG.
+      </p>
+    </div>
+
+    <!-- 3 Testimonial Cards Grid -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((t) => (
+        <div class="relative rounded-2xl bg-white border border-slate-200 p-8 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+          
+          <div>
+            <!-- Metric Pill at top -->
+            <div class="flex items-center justify-between pb-6 border-b border-slate-100">
+              <span class={`text-xs font-bold px-3 py-1 rounded-full ${t.accentBg} ${t.accentText}`}>
+                {t.metric}
+              </span>
+              <span class="text-[11px] font-semibold text-slate-400">
+                {t.submetric}
+              </span>
+            </div>
+
+            <!-- Star Ratings -->
+            <div class="flex items-center gap-1 text-amber-400 mt-6 mb-4">
+              {[...Array(5)].map(() => (
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+
+            <!-- Quote Text -->
+            <p class="text-sm text-slate-700 leading-relaxed italic">
+              "{t.quote}"
+            </p>
+          </div>
+
+          <!-- Author Info -->
+          <div class="mt-8 pt-6 border-t border-slate-100 flex items-center gap-3">
+            <div 
+              class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-sm shrink-0 shadow-sm"
+              style={`background-color: ${t.accentColor};`}
+            >
+              {t.initials}
+            </div>
+            <div>
+              <h4 class="text-sm font-bold text-slate-900">{t.name}</h4>
+              <p class="text-xs text-slate-500 font-medium">{t.role}, {t.company}</p>
+              <p class="text-[11px] text-slate-400 mt-0.5">{t.location}</p>
+            </div>
+          </div>
+
+        </div>
+      ))}
+    </div>
+
+    <!-- Frequently Asked Questions Accordion -->
+    <div class="mt-24 max-w-4xl mx-auto">
+      <div class="text-center mb-10">
+        <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">
+          Frequently Asked Questions
+        </h3>
+        <p class="text-sm text-slate-500 mt-2">
+          Everything you need to know about working with the EOONG team.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq, idx) => (
+          <div class="faq-item rounded-xl bg-white border border-slate-200 overflow-hidden transition-all duration-200">
+            <button
+              type="button"
+              class="faq-toggle w-full text-left py-4 px-6 font-bold text-slate-900 flex items-center justify-between gap-4 focus:outline-none focus:bg-slate-50"
+              aria-expanded="false"
+              data-target={`faq-answer-${idx}`}
+            >
+              <span class="text-sm sm:text-base">{faq.question}</span>
+              <svg class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id={`faq-answer-${idx}`} class="faq-content hidden px-6 pb-5 pt-1 text-sm text-slate-600 leading-relaxed border-t border-slate-100">
+              {faq.answer}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const toggles = document.querySelectorAll('.faq-toggle');
+
+  toggles.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      if (!targetId) return;
+      const content = document.getElementById(targetId);
+      const icon = btn.querySelector('.faq-icon');
+      const isExpanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (content && icon) {
+        if (isExpanded) {
+          content.classList.add('hidden');
+          icon.classList.remove('rotate-180');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          content.classList.remove('hidden');
+          icon.classList.add('rotate-180');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+  });
+</script>

@@ -1,0 +1,187 @@
+---
+// WhyChoose.astro
+const pillars = [
+  {
+    title: '3–5 Person Lean Pod',
+    subtitle: 'Senior builders, zero bloated overhead',
+    description:
+      'You deal directly with the senior engineers designing and building your product. No junior hand-offs, no layers of non-technical account managers, no billed office perks.',
+    badge: 'Direct Founder Access',
+    color: 'teal',
+  },
+  {
+    title: 'Proven Full-Stack Expertise',
+    subtitle: 'Frontend, backend, mobile & cloud',
+    description:
+      'We do not assemble fragile template duct tape. We write production-grade TypeScript, Flutter, Python, and SQL with clean architecture and comprehensive error recovery.',
+    badge: 'Enterprise Standards',
+    color: 'amber',
+  },
+  {
+    title: 'African Market Fluency',
+    subtitle: 'Built for local consumer realities',
+    description:
+      'We understand the nuances of local payment rails (Paystack, M-Pesa, Flutterwave), volatile network bandwidth, WhatsApp-first customer behavior, and low-spec mobile devices.',
+    badge: 'Local Context Native',
+    color: 'rust',
+  },
+  {
+    title: 'Flexible Engagement',
+    subtitle: 'Fixed-fee projects or monthly retainers',
+    description:
+      'Whether you need a defined 3-week product launch or continuous technical leadership as your fractional CTO, our engagement models adapt to your cash flow.',
+    badge: 'Zero Surprise Fees',
+    color: 'berry',
+  },
+  {
+    title: 'Rapid Iteration & Deployment',
+    subtitle: 'Live staging previews every Friday',
+    description:
+      'You are never left guessing what we are building. We operate on tight 1-week milestones with interactive review links, so feedback is immediate and execution is fast.',
+    badge: 'Continuous Delivery',
+    color: 'teal',
+  },
+  {
+    title: '100% IP & Code Ownership',
+    subtitle: 'Everything we write belongs to you',
+    description:
+      'From day one, all repositories, server credentials, database migrations, and documentation are transferred to your company accounts. Zero vendor lock-in.',
+    badge: 'Zero Lock-in',
+    color: 'amber',
+  },
+];
+
+const comparisonRows = [
+  {
+    feature: 'Team Structure',
+    legacy: 'Bloated (Account Execs, Jr Devs, PMs)',
+    freelancers: 'Single individual (High risk)',
+    eoong: 'Lean 3–5 person Senior Engineering Pod',
+  },
+  {
+    feature: 'Delivery Speed',
+    legacy: '3 to 9 months of bureaucracy',
+    freelancers: 'Unpredictable, frequent delays',
+    eoong: '2 to 4 weeks sprint to production',
+  },
+  {
+    feature: 'African Payment Rails',
+    legacy: 'Generic Stripe-only assumptions',
+    freelancers: 'Trial-and-error integrations',
+    eoong: 'Native Paystack, M-Pesa & Flutterwave depth',
+  },
+  {
+    feature: 'Communication',
+    legacy: 'Scheduled tickets via junior intermediaries',
+    freelancers: 'Ghosting risks during crunch time',
+    eoong: 'Direct Slack / WhatsApp channel with lead builders',
+  },
+  {
+    feature: 'Pricing Model',
+    legacy: 'Astronomical retainers & hourly creep',
+    freelancers: 'Cheap upfront, costly rewrites',
+    eoong: 'Transparent fixed-scope or flexible retainers',
+  },
+  {
+    feature: 'Code & IP Ownership',
+    legacy: 'Proprietary platforms & lock-in contracts',
+    freelancers: 'Scattered files, zero documentation',
+    eoong: '100% transfer of source code & clean docs',
+  },
+];
+---
+
+<section id="why-us" class="py-24 bg-slate-50/70 border-b border-slate-200/80 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Section Header -->
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-200/70 text-xs font-bold text-slate-800 uppercase tracking-wider mb-4">
+        The EOONG Difference
+      </span>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        Why Growing Businesses Choose Us Over Traditional Agencies
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-slate-600">
+        We stripped away the agency fluff, bloated markups, and communication silos. 
+        What remains is pure engineering momentum focused on moving your business forward.
+      </p>
+    </div>
+
+    <!-- 6 Core Pillars Grid -->
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {pillars.map((pillar) => (
+        <div class="rounded-2xl bg-white p-7 border border-slate-200 shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between">
+              <span class="text-[11px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-700">
+                {pillar.badge}
+              </span>
+              <svg class="w-5 h-5 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h3 class="mt-5 text-xl font-bold text-slate-900">
+              {pillar.title}
+            </h3>
+            <p class="text-xs font-semibold text-[#0d6573] mt-1">
+              {pillar.subtitle}
+            </p>
+            <p class="mt-3 text-sm text-slate-600 leading-relaxed">
+              {pillar.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Interactive / High-Impact Comparison Table -->
+    <div class="mt-20">
+      <div class="text-center mb-8">
+        <h3 class="text-2xl font-bold text-slate-900">
+          How We Stack Up Against Your Alternatives
+        </h3>
+        <p class="text-sm text-slate-600 mt-2">
+          Compare the realities of working with legacy agencies, individual freelancers, and the EOONG team.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="border-b border-slate-200 bg-slate-50/80">
+              <th scope="col" class="py-4 px-6 font-bold text-slate-900 w-1/4">Evaluation Criteria</th>
+              <th scope="col" class="py-4 px-6 font-semibold text-slate-500 w-1/4">Traditional Agency</th>
+              <th scope="col" class="py-4 px-6 font-semibold text-slate-500 w-1/4">Freelancer Roulette</th>
+              <th scope="col" class="py-4 px-6 font-bold text-[#0d6573] bg-[#e6f4f6]/60 w-1/4 border-l border-r border-[#0d6573]/20">
+                The EOONG Pod
+              </th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-slate-100">
+            {comparisonRows.map((row) => (
+              <tr class="hover:bg-slate-50/50 transition-colors">
+                <td class="py-4 px-6 font-semibold text-slate-800">
+                  {row.feature}
+                </td>
+                <td class="py-4 px-6 text-slate-500">
+                  <span class="inline-flex items-center text-xs text-rose-600 mr-1.5">✕</span>
+                  {row.legacy}
+                </td>
+                <td class="py-4 px-6 text-slate-500">
+                  <span class="inline-flex items-center text-xs text-amber-600 mr-1.5">⚠</span>
+                  {row.freelancers}
+                </td>
+                <td class="py-4 px-6 font-medium text-slate-900 bg-[#e6f4f6]/30 border-l border-r border-[#0d6573]/20">
+                  <span class="inline-flex items-center text-xs text-emerald-600 font-bold mr-1.5">✓</span>
+                  {row.eoong}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</section>

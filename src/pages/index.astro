@@ -1,11 +1,69 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import ValueProp from '../components/ValueProp.astro';
+import Services from '../components/Services.astro';
+import WhyChoose from '../components/WhyChoose.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import Pricing from '../components/Pricing.astro';
+import Industries from '../components/Industries.astro';
+import Testimonials from '../components/Testimonials.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="EOONG — Technology Solutions Built for African Small Businesses"
+  description="Affordable IT. No Complexity. Just Results. Web development, automated workflows, data dashboards, and mobile solutions tailored for growing African businesses."
+>
+  <Header />
+  <main id="main-content" class="flex-1">
+    <!-- 1. Hero Section -->
+    <div class="scroll-reveal">
+      <Hero />
+    </div>
+
+    <!-- 2. Value Proposition Section -->
+    <div class="scroll-reveal">
+      <ValueProp />
+    </div>
+
+    <!-- 3. Services Overview -->
+    <div class="scroll-reveal">
+      <Services />
+    </div>
+
+    <!-- 4. Why Choose EOONG -->
+    <div class="scroll-reveal">
+      <WhyChoose />
+    </div>
+
+    <!-- 5. How It Works -->
+    <div class="scroll-reveal">
+      <HowItWorks />
+    </div>
+
+    <!-- 6. Pricing Tiers & Scope Estimator -->
+    <div class="scroll-reveal">
+      <Pricing />
+    </div>
+
+    <!-- 7. Industries We Serve -->
+    <div class="scroll-reveal">
+      <Industries />
+    </div>
+
+    <!-- 8. Testimonials & Case Studies -->
+    <div class="scroll-reveal">
+      <Testimonials />
+    </div>
+
+    <!-- 9. Call-to-Action Section -->
+    <div class="scroll-reveal">
+      <CTA />
+    </div>
+  </main>
+  <!-- 10. Footer -->
+  <Footer />
 </Layout>
